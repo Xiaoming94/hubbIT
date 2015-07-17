@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get '(:user_id)' => 'stats#show', as: 'stats'
   end
 
+  devise_for :users, controllers: { sessions: "users/sessions" }
+
   put '/sessions(.:format)' => 'sessions#update'
 
   resources :sessions
